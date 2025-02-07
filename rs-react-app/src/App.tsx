@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { DetailPage } from './pages/detail/Detail';
+import { MainPage } from './pages/main/Main';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/:id" element={<DetailPage />} />
+      </Routes>
+      ;
+    </BrowserRouter>
+  );
 }
 
 export default App;
