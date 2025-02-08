@@ -1,14 +1,8 @@
-type Props = {
-  searchTerm: string;
-  handleSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSearch: () => void;
-};
+import { useResults } from '../../hooks/useResults';
 
-export const Search = ({
-  searchTerm,
-  handleSearch,
-  handleSearchChange,
-}: Props) => {
+export const Search = () => {
+  const { searchTerm, handleSearch, handleSearchChange } = useResults();
+
   return (
     <>
       <input

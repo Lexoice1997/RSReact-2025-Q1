@@ -1,27 +1,28 @@
 import { useNavigate } from 'react-router-dom';
 
-import { ItemListModel } from '../../types/itemListModel';
+import { useResults } from '../../hooks/useResults';
 
 import styles from './list.module.css';
 
-type Props = {
-  results: ItemListModel[];
-};
-
-export const List = ({ results }: Props) => {
+export const List = () => {
   const navigate = useNavigate();
+  const { results } = useResults();
 
   const selectItem = (name: string) => {
-    navigate(`/main/${name}`);
+    navigate(`/${name}`);
   };
 
   return (
     <ul className={styles.list}>
-      {results?.map((item) => (
-        <li key={item.name} onClick={() => selectItem(item.name)}>
-          <strong>{item.name}</strong>: {item.description}
-        </li>
-      ))}
+      {results?.length > 0 ? (
+        results?.map((item) => (
+          <li key={item.name} onClick={() => selectItem(item.name)}>
+            <strong>{item.name}</strong>: {item.description}
+          </li>
+        ))
+      ) : (
+        <p>No items found</p>
+      )}
     </ul>
   );
 };

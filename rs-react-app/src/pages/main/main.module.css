@@ -21,6 +21,7 @@
 .bottom {
   display: flex;
   gap: 40px;
+  padding: 20px;
 }
 
 .left {

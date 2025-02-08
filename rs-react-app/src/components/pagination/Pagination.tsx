@@ -1,11 +1,10 @@
+import { useResults } from '../../hooks/useResults';
+
 import styles from './pagination.module.css';
 
-type Props = {
-  changePage: (newPage: number) => void;
-  currentPage: number;
-};
+export const Pagination = () => {
+  const { changePage, currentPage } = useResults();
 
-export const Pagination = ({ changePage, currentPage }: Props) => {
   return (
     <div className={styles.pagination}>
       <button
