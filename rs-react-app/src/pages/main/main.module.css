@@ -1,0 +1,31 @@
+.main {
+  width: 100%;
+
+  li {
+    width: max-content;
+    cursor: pointer;
+  }
+}
+
+.top {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+
+  input {
+    width: 100%;
+  }
+}
+
+.bottom {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 780px;
+}

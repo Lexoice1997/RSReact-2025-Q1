@@ -1,0 +1,13 @@
+.detail {
+  padding: 10px;
+  border: 1px solid rgb(148, 146, 146);
+  border-radius: 8px;
+  width: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.detail > h3 {
+  margin: 0;
+}
